@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Starjedi'; /*a name to be used later*/
+    src: url('/css/fonts/star_jedi/Starjedi.ttf'); /*URL to font*/
+}
+
+* {
+    font-family: 'Starjedi';
+}
+
+body{
+    background-color: black;
+}
+
+
+.cover-page,
+.nav a{
+    color: rgb(255,227,0 ) !important;
+}
+
+.nav a:hover{
+    color: rgb(226, 200, 1) !important;
+}
+
+.card{
+    border-color: rgb(39,43,48);
+}
