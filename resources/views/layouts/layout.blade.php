@@ -13,6 +13,8 @@
         
         <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     </head>
     <body>
        
@@ -34,7 +36,7 @@
                                 <div>
                                     <ul class="nav justify-content-center">
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="#">Characters</a>
+                                                  <a class="nav-link" href="{{url('/')}}">Characters</a>
                                                 </li>
                                                 <li class="nav-item">
                                                   <a class="nav-link" href="#">My Characters</a>

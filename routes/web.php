@@ -16,3 +16,4 @@
 });*/
 
 Route::get('/', 'CharactersController@index');
+Route::get('/characters/{id}', 'CharactersController@showAPI')->name('show');

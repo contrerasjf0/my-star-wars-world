@@ -366,6 +366,20 @@ class ImagesCharactersDirectory {
       $size = count($characters);
       $imagesCharactersSize = count($this->imagesCharacters);
       $image = '';
+      
+      if(array_keys($characters) !== range(0, count($characters) - 1)){
+
+        foreach ($this->imagesCharacters as $image) {
+
+          if($image['name'] === $characters['name']){
+            $characters['image'] =  $image['image'];
+            break;
+          }
+            
+        }
+
+        return $characters;
+      }
 
       for ($i= 0; $i < $size; $i++) { 
         foreach ($this->imagesCharacters as $image) {

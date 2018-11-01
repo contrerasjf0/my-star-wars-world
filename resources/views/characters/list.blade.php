@@ -9,6 +9,9 @@
                     <img class="card-img-top" src="{{$character['image']}}" alt={{ 'img' .  $character['image']}} height="250" width="100">
                     <div class="card-header">
                         {{$character['name']}}
+                        
+                        <a href="{{route('show', ['id' => explode("/", $character['url'])[5]])}}"><i class="far fa-eye"></i></a>
+                        
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">Gender: {{$character['gender']}}</li>
