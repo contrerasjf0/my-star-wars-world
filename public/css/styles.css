@@ -13,12 +13,17 @@ body{
 
 
 .cover-page,
-.nav a{
+.nav a,
+label{
     color: rgb(255,227,0 ) !important;
 }
 
 .nav a:hover{
     color: rgb(226, 200, 1) !important;
+}
+
+.nav-link.active{
+    color: rgba(122, 250, 17, 0.884) !important;
 }
 
 .card{

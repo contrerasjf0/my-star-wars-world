@@ -16,4 +16,6 @@
 });*/
 
 Route::get('/', 'CharactersController@index');
+Route::post('/characters', 'CharactersController@store')->name('store');
+Route::get('/characters/create', 'CharactersController@create')->name('create');
 Route::get('/characters/{id}', 'CharactersController@showAPI')->name('show');

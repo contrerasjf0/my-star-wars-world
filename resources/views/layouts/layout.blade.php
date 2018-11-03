@@ -36,13 +36,21 @@
                                 <div>
                                     <ul class="nav justify-content-center">
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="{{url('/')}}">Characters</a>
+                                                    <a class="nav-link 
+                                                        @if (Route::current()->uri() == '/')
+                                                            active
+                                                        @endif
+                                                        " href="{{url('/')}}">Characters</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="#">My Characters</a>
+                                                  <a class="nav-link" href="">My Characters</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="#">New Character</a>
+                                                  <a class="nav-link 
+                                                    @if (Route::current()->getName() == 'create')
+                                                        active
+                                                    @endif 
+                                                    " href="{{route('create')}}">New Character</a>
                                                 </li>
                                               </ul>
                                 </div>
