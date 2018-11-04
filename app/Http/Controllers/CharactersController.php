@@ -131,6 +131,11 @@ class CharactersController extends Controller
         return view('characters.show', ['character' => $characterData]);
     }
 
+    public function showMyCharacter($id){
+        $characterData = Character::findOrFail($id);
+        return view('characters.show', ['character' => $characterData]);
+    }
+
     private function queryToApi($method = 'GET', $url = 'https://swapi.co/api/people/'){
         try {
  

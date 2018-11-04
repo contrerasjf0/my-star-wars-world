@@ -20,27 +20,37 @@
                       <li class="list-group-item">Skin color: {{$character['skin_color']}}</li>
                       <li class="list-group-item">Mass: {{$character['mass']}}</li>
                       <li class="list-group-item">Birth year: {{$character['birth_year']}}</li>
+
+                      @if($character['vehicles'])
                       <li class="list-group-item">Vehicles: <br/>
-                          @forelse ($character['vehicles'] as $vehicle)
-                              <spam>{{ $vehicle }},</spam>
-                          @empty
-                              <spam>N/A</spam>
-                          @endforelse
-                      </li>
-                      <li class="list-group-item">Starships: <br/>
-                          @forelse ($character['starships'] as $starship)
-                              <spam>{{ $starship }},</spam>
-                          @empty
-                              <spam>N/A</spam>
-                          @endforelse
-                      </li>
+                        @forelse ($character['vehicles'] as $vehicle)
+                            <spam>{{ $vehicle }},</spam>
+                        @empty
+                            <spam>N/A</spam>
+                        @endforelse
+                    </li>
+                      @endif
+
+                    @if($character['starships'])
+                    <li class="list-group-item">Starships: <br/>
+                        @forelse ($character['starships'] as $starship)
+                            <spam>{{ $starship }},</spam>
+                        @empty
+                            <spam>N/A</spam>
+                        @endforelse
+                    </li>
+                    @endif
+                      
+                      @if($character['films'])
                       <li class="list-group-item">Films: <br/>
-                          @forelse ($character['films'] as $film)
-                              <spam>{{ $film }},</spam>
-                          @empty
-                              <spam>N/A</spam>
-                          @endforelse
-                      </li>
+                        @forelse ($character['films'] as $film)
+                            <spam>{{ $film }},</spam>
+                        @empty
+                            <spam>N/A</spam>
+                        @endforelse
+                    </li>
+                      @endif
+
                       
                     </ul>
               </div>

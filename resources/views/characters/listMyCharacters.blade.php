@@ -10,7 +10,7 @@
                     <div class="card-header">
                         {{$character->name}}
                         
-                        <a href="{{route('show', ['id' => $character->id])}}"><i class="far fa-eye"></i></a>
+                        <a href="{{route('showMyCharacter', ['id' => $character->id])}}"><i class="far fa-eye"></i></a>
                         
                     </div>
                     <ul class="list-group list-group-flush">
