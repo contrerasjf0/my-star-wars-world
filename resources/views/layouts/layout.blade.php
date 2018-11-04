@@ -43,7 +43,11 @@
                                                         " href="{{url('/')}}">Characters</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                  <a class="nav-link" href="">My Characters</a>
+                                                  <a class="nav-link 
+                                                  @if (Route::current()->getName() == 'listMyCharacters')
+                                                        active
+                                                  @endif 
+                                                  " href="{{route('listMyCharacters')}}">My Characters</a>
                                                 </li>
                                                 <li class="nav-item">
                                                   <a class="nav-link 

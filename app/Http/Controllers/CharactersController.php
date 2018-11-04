@@ -33,6 +33,12 @@ class CharactersController extends Controller
         return view('characters.list', ['characters' => $characters]);
     }
 
+    public function listMyCharacters(){
+         $characters = Character::all();
+
+        return view('characters.listMyCharacters', ['characters' => $characters]);
+    }
+
     public function create(){
 
         return view('characters.create');
