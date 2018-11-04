@@ -44,6 +44,16 @@ class CharactersController extends Controller
         return view('characters.create');
     }
 
+    public function destroy($id){
+        $character = Character::find($id);
+
+        $character->delete();
+
+        //Character::destroy($id);
+
+        return redirect()->route('listMyCharacters');
+    }
+
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
             'name' => 'required|min:3|max:100',

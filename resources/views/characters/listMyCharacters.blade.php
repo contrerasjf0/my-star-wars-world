@@ -11,6 +11,12 @@
                         {{$character->name}}
                         
                         <a href="{{route('showMyCharacter', ['id' => $character->id])}}"><i class="far fa-eye"></i></a>
+                        <form id="form_delete" method="post" action="{{route('destroy', ['id' => $character->id])}}">
+                            @method('DELETE')
+                            @csrf
+                            <a href="javascript:{}" onclick="document.getElementById('form_delete').submit();"><i class="fas fa-trash-alt"></i></a>
+                        </form>
+                       
                         
                     </div>
                     <ul class="list-group list-group-flush">

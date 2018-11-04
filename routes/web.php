@@ -20,4 +20,6 @@ Route::post('/characters', 'CharactersController@store')->name('store');
 Route::get('/characters/create', 'CharactersController@create')->name('create');
 Route::get('/characters/{id}', 'CharactersController@showAPI')->name('show');
 Route::get('/my-characters', 'CharactersController@listMyCharacters')->name('listMyCharacters');
+Route::get('/my-characters', 'CharactersController@listMyCharacters')->name('listMyCharacters');
 Route::get('/my-characters/{id}', 'CharactersController@showMyCharacter')->name('showMyCharacter');
+Route::delete('/my-characters/{id}/destroy', 'CharactersController@destroy')->name('destroy');
