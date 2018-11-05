@@ -12,6 +12,7 @@ use GuzzleHttp\Client as GuzzleHttpClient;
 use GuzzleHttp\Exception\RequestException;
 
 use App\Character;
+use App\Specie;
 use App\Directories\ImagesCharactersDirectory;
 
 
@@ -34,14 +35,14 @@ class CharactersController extends Controller
     }
 
     public function listMyCharacters(){
-         $characters = Character::all();
+         $characters = Character::with('specie')->get();;
 
         return view('characters.listMyCharacters', ['characters' => $characters]);
     }
 
     public function create(){
-
-        return view('characters.create');
+         $species = Specie::all();
+        return view('characters.create', [ 'species' => $species]);
     }
 
     public function destroy($id){
@@ -57,7 +58,7 @@ class CharactersController extends Controller
     public function store(Request $request){
         $validator = Validator::make($request->all(),[
             'name' => 'required|min:3|max:100',
-            'specie' => 'required|min:3|max:50',
+            'specie_id' => 'required|integer|digits_between:1,2',
             'gender' => 'required|alpha',
             'height' => 'numeric|digits_between:2,3',
             'eyes_color' => 'alpha|min:3|max:30',
@@ -77,7 +78,7 @@ class CharactersController extends Controller
         $character = new Character();
 
         $character->name = $request->input('name');
-        $character->specie = $request->input('specie');
+        $character->specie_id = $request->input('specie_id');
         $character->gender =  $request->input('gender');
         $character->height = $request->input('height');
         $character->eyes_color = $request->input('eyes_color');

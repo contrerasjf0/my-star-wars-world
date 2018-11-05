@@ -12,9 +12,9 @@
               </div>
               <div>
                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Species: {{$character['species']}}</li>
+                      <li class="list-group-item">Species: {{($character['species'])? $character['species'] : $character->specie->name }}</li>
                       <li class="list-group-item">Gender: {{$character['gender']}}</li>
-                      <li class="list-group-item">Eye color: {{$character['eye_color']}}</li>
+                      <li class="list-group-item">Eye color: {{($character['eye_color'])? $character['eye_color'] :$character['eyes_color']}}</li>
                       <li class="list-group-item">Hair color: {{$character['hair_color']}}</li>
                       <li class="list-group-item">Height: {{$character['height']}}</li>
                       <li class="list-group-item">Skin color: {{$character['skin_color']}}</li>

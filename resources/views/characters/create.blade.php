@@ -21,14 +21,22 @@
       </div>
       <div class="col-md-4 mb-3">
         <label for="specieInput">Specie</label>
-        <input type="text" class="form-control
-        @if($errors->has('specie'))
+        <select class="form-control 
+        @if($errors->has('specie_id'))
             is-invalid
         @endif
-        " id="specieInput" name="specie" value="{{ old('specie') }}">
+        " id="specieInput" name="specie_id">
+            <option value=""></option>
+            @foreach ($species as $specie)
+                <option value="{{$specie->id}}" 
+                    {{ old('specie_id') == $specie->id ? 'selected' : '' }}>
+                    {{$specie->name}}
+                </option>
+            @endforeach
+          </select>
         <div class="invalid-feedback">
-            @if($errors->has('specie'))
-                {{$errors->first('specie')}}
+            @if($errors->has('specie_id'))
+                {{$errors->first('specie_id')}}
             @endif
         </div>
       </div>
@@ -101,7 +109,7 @@
         <div class="col-md-4 mb-3">
                 <label for="skinColorInput">Skin color</label>
                 <input type="text" class="form-control
-                @if($errors->has('slin_color'))
+                @if($errors->has('skin_color'))
                     is-invalid
                 @endif
                 " id="skinColorInput" name="skin_color" value="{{ old('skin_color') }}">

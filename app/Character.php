@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Specie;
+
 class Character extends Model
 {
    protected $fillable = [
        'name',
-       'specie',
+       'specie_id',
        'gender',
        'height',
        'eyes_color',
@@ -18,4 +20,8 @@ class Character extends Model
        'mass',
        'image',
    ];
+
+   public function specie(){
+      return $this->belongsTo(Specie::class);
+   }
 }
